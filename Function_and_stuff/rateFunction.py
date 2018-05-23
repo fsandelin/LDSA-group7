@@ -15,6 +15,21 @@ def yearRate(word):
         wordArray.append([yearPair,diff,diffProcent])
     return wordArray
 
+'''
+With the buzzWord function we can set a threshold regarding the set of words of each word pair , however a big threshold
+is recommended. 
+'''
+
+
+def buzzWord(list,threshold):
+    listLength = len(list)
+    buzzList=[]
+    for i in range(0, listLength - 1):
+        if list[i][2] >= threshold:
+            buzzList.append(list[i])
+    return buzzList
+
+
 def main():
     print("Output in the form of Year-pair, increase in usage by numbers, and increase in procent")
     print('[year pair,change in usage[real number],change in usage[procent]]')
@@ -26,6 +41,9 @@ def main():
                    ['2001', '7', '6', '6'], ['2002', '3', '2', '1'], ['2003', '13', '10', '4'],
                    ['2005', '45', '15', '2']]
     yearPair = yearRate(exampleWord)
+    threshold = 100
+    thresPairs = buzzWord(yearPair,threshold)
     print(yearPair)
+    print(thresPairs)
 
 main()
