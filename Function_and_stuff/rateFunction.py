@@ -1,4 +1,10 @@
 
+'''
+yearRate is a function that takes the list of the word, and returns a list with the pair of years as well as their
+change in both by an absolute amount and in procent from previous years.
+'''
+
+
 def yearRate(word):
     wordLength = len(word)
     wordArray=[]
